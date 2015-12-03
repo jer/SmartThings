@@ -46,20 +46,20 @@ preferences {
 }
 
 def installed() {
-	log.debug "Installed with settings: ${settings}"
+    log.debug "Installed with settings: ${settings}"
 
-	initialize()
+    initialize()
 }
 
 def updated() {
-	log.debug "Updated with settings: ${settings}"
+    log.debug "Updated with settings: ${settings}"
 
-	unsubscribe()
-	initialize()
+    unsubscribe()
+    initialize()
 }
 
 def initialize() {
-	subscribe(washer, "power", washerHandler)
+    subscribe(washer, "power", washerHandler)
     subscribe(dryer, "power", dryerHandler)
 }
 
@@ -98,7 +98,7 @@ def getState(device, key) {
 }
 
 def washerHandler(evt) {
-	log.debug "Washer Handler"
+  log.debug "Washer Handler"
     log.debug "State: ${state}"
 
     log.debug "washer_running: ${washer_running()}"
@@ -117,5 +117,5 @@ def washerHandler(evt) {
 }
 
 def dryerHandler(evt) {
-	log.debug "Dryer Handler"
+  log.debug "Dryer Handler"
 }
